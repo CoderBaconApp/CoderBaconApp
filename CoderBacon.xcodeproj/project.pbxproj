@@ -19,6 +19,7 @@
 		D051A888190A012A00CB8E37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D051A870190A012A00CB8E37 /* UIKit.framework */; };
 		D051A890190A012A00CB8E37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D051A88E190A012A00CB8E37 /* InfoPlist.strings */; };
 		D051A892190A012A00CB8E37 /* CoderBaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A891190A012A00CB8E37 /* CoderBaconTests.m */; };
+		D051A89D190A01F000CB8E37 /* CBAUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		D051A88D190A012A00CB8E37 /* CoderBaconTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoderBaconTests-Info.plist"; sourceTree = "<group>"; };
 		D051A88F190A012A00CB8E37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D051A891190A012A00CB8E37 /* CoderBaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoderBaconTests.m; sourceTree = "<group>"; };
+		D051A89B190A01F000CB8E37 /* CBAUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAUsersViewController.h; sourceTree = "<group>"; };
+		D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAUsersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				D051A87C190A012A00CB8E37 /* CBAAppDelegate.m */,
 				D051A87E190A012A00CB8E37 /* Images.xcassets */,
 				D051A873190A012A00CB8E37 /* Supporting Files */,
+				D051A89B190A01F000CB8E37 /* CBAUsersViewController.h */,
+				D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */,
 			);
 			path = CoderBacon;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D051A879190A012A00CB8E37 /* main.m in Sources */,
+				D051A89D190A01F000CB8E37 /* CBAUsersViewController.m in Sources */,
 				D051A87D190A012A00CB8E37 /* CBAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

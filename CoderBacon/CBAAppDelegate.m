@@ -7,6 +7,7 @@
 //
 
 #import "CBAAppDelegate.h"
+#import "CBAUsersViewController.h"
 
 @implementation CBAAppDelegate
 
@@ -14,6 +15,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    CBAUsersViewController *uvc = [[CBAUsersViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:uvc];
+    
+    self.window.rootViewController = nvc;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
