@@ -20,6 +20,7 @@
 		D051A890190A012A00CB8E37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D051A88E190A012A00CB8E37 /* InfoPlist.strings */; };
 		D051A892190A012A00CB8E37 /* CoderBaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A891190A012A00CB8E37 /* CoderBaconTests.m */; };
 		D051A89D190A01F000CB8E37 /* CBAUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */; };
+		D051A8A0190A034600CB8E37 /* CBAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A89F190A034600CB8E37 /* CBAClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		D051A891190A012A00CB8E37 /* CoderBaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoderBaconTests.m; sourceTree = "<group>"; };
 		D051A89B190A01F000CB8E37 /* CBAUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAUsersViewController.h; sourceTree = "<group>"; };
 		D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAUsersViewController.m; sourceTree = "<group>"; };
+		D051A89E190A034600CB8E37 /* CBAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAClient.h; sourceTree = "<group>"; };
+		D051A89F190A034600CB8E37 /* CBAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +115,12 @@
 			children = (
 				D051A87B190A012A00CB8E37 /* CBAAppDelegate.h */,
 				D051A87C190A012A00CB8E37 /* CBAAppDelegate.m */,
-				D051A87E190A012A00CB8E37 /* Images.xcassets */,
-				D051A873190A012A00CB8E37 /* Supporting Files */,
+				D051A89E190A034600CB8E37 /* CBAClient.h */,
+				D051A89F190A034600CB8E37 /* CBAClient.m */,
 				D051A89B190A01F000CB8E37 /* CBAUsersViewController.h */,
 				D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */,
+				D051A87E190A012A00CB8E37 /* Images.xcassets */,
+				D051A873190A012A00CB8E37 /* Supporting Files */,
 			);
 			path = CoderBacon;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				D051A879190A012A00CB8E37 /* main.m in Sources */,
 				D051A89D190A01F000CB8E37 /* CBAUsersViewController.m in Sources */,
 				D051A87D190A012A00CB8E37 /* CBAAppDelegate.m in Sources */,
+				D051A8A0190A034600CB8E37 /* CBAClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
