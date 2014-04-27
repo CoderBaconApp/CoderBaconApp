@@ -21,6 +21,7 @@
 		D051A892190A012A00CB8E37 /* CoderBaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A891190A012A00CB8E37 /* CoderBaconTests.m */; };
 		D051A89D190A01F000CB8E37 /* CBAUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */; };
 		D051A8A0190A034600CB8E37 /* CBAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A89F190A034600CB8E37 /* CBAClient.m */; };
+		D07556EC190DAE95007AE0DF /* CBAUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07556EB190DAE95007AE0DF /* CBAUsersViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAUsersViewController.m; sourceTree = "<group>"; };
 		D051A89E190A034600CB8E37 /* CBAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAClient.h; sourceTree = "<group>"; };
 		D051A89F190A034600CB8E37 /* CBAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAClient.m; sourceTree = "<group>"; };
+		D07556EB190DAE95007AE0DF /* CBAUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBAUsersViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				D051A89F190A034600CB8E37 /* CBAClient.m */,
 				D051A89B190A01F000CB8E37 /* CBAUsersViewController.h */,
 				D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */,
+				D07556EB190DAE95007AE0DF /* CBAUsersViewController.xib */,
 				D051A87E190A012A00CB8E37 /* Images.xcassets */,
 				D051A873190A012A00CB8E37 /* Supporting Files */,
 			);
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D051A877190A012A00CB8E37 /* InfoPlist.strings in Resources */,
+				D07556EC190DAE95007AE0DF /* CBAUsersViewController.xib in Resources */,
 				D051A87F190A012A00CB8E37 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +454,7 @@
 				D051A897190A012A00CB8E37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D051A898190A012A00CB8E37 /* Build configuration list for PBXNativeTarget "CoderBaconTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +463,7 @@
 				D051A89A190A012A00CB8E37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

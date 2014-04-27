@@ -9,13 +9,19 @@
 #import "CBAUsersViewController.h"
 #import "CBAClient.h"
 
-@interface CBAUsersViewController () <UISearchDisplayDelegate>
+static const NSInteger CBAMaxInvitations = 2;
+
+@interface CBAUsersViewController () <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate>
 
 @property (nonatomic) NSArray *users;
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) UISearchDisplayController *searchController;
 @property (nonatomic, strong) NSMutableArray *filteredUsers;
 @property (nonatomic, strong) NSMutableArray *selectedUsers;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *footerView;
+@property (strong, nonatomic) IBOutlet UILabel *footerLabel;
+@property (readonly) NSInteger remainingInvitations;
 @end
 
 @implementation CBAUsersViewController
@@ -29,7 +35,8 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next"
                                                                                   style:UIBarButtonItemStylePlain
                                                                                  target:self
-                                                                                 action:@selector(nextButtonTapped)];
+                                                                                 action:@selector(nextButtonTapped:)];
+        
         _filteredUsers = [[NSMutableArray alloc] init];
         _selectedUsers = [[NSMutableArray alloc] init];
         
@@ -45,14 +52,18 @@
     [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 
+#pragma mark Properties
+
+- (NSInteger)remainingInvitations {
+    return CBAMaxInvitations - [self.selectedUsers count];
+}
+
 #pragma mark View Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupTableView];
     [self setupSearchBar];
-    
-    [[self tableView] registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    [self.searchDisplayController.searchResultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
     CBAClient *client = [[CBAClient alloc] init];
     
@@ -70,15 +81,22 @@
     [super viewWillAppear:animated];
     
     [self updateTableViewForDynamicTypeSize];
+    [self updateFooter];
 }
 
 
 #pragma mark Action
-- (void)nextButtonTapped {
+- (IBAction)nextButtonTapped:(id)sender {
     NSLog(@"nextButtonTapped");
 }
 
 #pragma mark UITableView Helper Methods
+- (void) setupTableView {
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [[self tableView] registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+}
+
 - (NSDictionary *)tableView:(UITableView *)tableView userForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *user;
     
@@ -155,7 +173,7 @@
     
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
+    if (cell.accessoryType == UITableViewCellAccessoryNone && self.remainingInvitations > 0) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         // Reflect selection in data model
         [self.selectedUsers addObject:user];
@@ -165,6 +183,7 @@
         [self.selectedUsers removeObject:user];
     }
     
+    [self updateFooter];
     NSLog(@"Selected Users: %@", self.selectedUsers);
 }
 
@@ -187,6 +206,7 @@
     self.searchController.searchResultsDataSource = self;
     self.searchController.searchResultsDelegate = self;
     self.searchController.delegate = self;
+    [self.searchDisplayController.searchResultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
 
 #pragma mark UISearchDisplayController Delegate Methods
@@ -200,6 +220,17 @@
 
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller {
     [self.tableView reloadData];
+}
+
+#pragma mark Footer Helper Methods
+- (void)updateFooter {
+    if (self.remainingInvitations > 0) {
+        self.footerLabel.text = [NSString stringWithFormat:@"%d invites left", self.remainingInvitations];
+    }
+    else {
+        self.footerLabel.text = @"Ready for next step!";
+        
+    }
 }
 
 
