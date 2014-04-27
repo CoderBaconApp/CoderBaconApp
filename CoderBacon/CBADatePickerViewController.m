@@ -27,7 +27,7 @@
                                                                                   style:UIBarButtonItemStylePlain
                                                                                  target:self
                                                                                  action:@selector(nextButtonTapped:)];
-        self.currentEvent = [[CBAEventStore sharedStore] currentEvent];
+        _currentEvent = [[CBAEventStore sharedStore] currentEvent];
 
     }
     return self;

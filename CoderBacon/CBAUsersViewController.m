@@ -8,6 +8,7 @@
 
 #import "CBAUsersViewController.h"
 #import "CBAClient.h"
+#import "CBAEventStore.h"
 
 static const NSInteger CBAMaxInvitations = 2;
 
@@ -22,6 +23,7 @@ static const NSInteger CBAMaxInvitations = 2;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
 @property (strong, nonatomic) IBOutlet UILabel *footerLabel;
 @property (readonly) NSInteger remainingInvitations;
+@property (strong, nonatomic) NSMutableDictionary *currentEvent;
 @end
 
 @implementation CBAUsersViewController
@@ -39,6 +41,8 @@ static const NSInteger CBAMaxInvitations = 2;
         
         _filteredUsers = [[NSMutableArray alloc] init];
         _selectedUsers = [[NSMutableArray alloc] init];
+        
+        _currentEvent = [[CBAEventStore sharedStore] currentEvent];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(updateTableViewForDynamicTypeSize)
@@ -88,6 +92,17 @@ static const NSInteger CBAMaxInvitations = 2;
 #pragma mark Action
 - (IBAction)nextButtonTapped:(id)sender {
     NSLog(@"nextButtonTapped");
+    
+    if (self.remainingInvitations == 0) {
+        NSMutableArray *selectedUsers = [[NSMutableArray alloc] initWithCapacity:[self.selectedUsers count]];
+        
+        for (NSDictionary *user in self.selectedUsers) {
+            [selectedUsers addObject:user[@"id"]];
+        }
+        self.currentEvent[@"users"] = selectedUsers;
+    }
+    
+    NSLog(@"currentEvent: %@", self.currentEvent);
 }
 
 #pragma mark UITableView Helper Methods
