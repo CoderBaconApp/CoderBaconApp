@@ -22,6 +22,9 @@
 		D051A89D190A01F000CB8E37 /* CBAUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */; };
 		D051A8A0190A034600CB8E37 /* CBAClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D051A89F190A034600CB8E37 /* CBAClient.m */; };
 		D07556EC190DAE95007AE0DF /* CBAUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07556EB190DAE95007AE0DF /* CBAUsersViewController.xib */; };
+		D07556EF190DC3D6007AE0DF /* CBADatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D07556EE190DC3D6007AE0DF /* CBADatePickerViewController.m */; };
+		D07556F1190DC3EE007AE0DF /* CBADatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07556F0190DC3EE007AE0DF /* CBADatePickerViewController.xib */; };
+		D07556F4190DC709007AE0DF /* CBAEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D07556F2190DC709007AE0DF /* CBAEventStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,11 @@
 		D051A89E190A034600CB8E37 /* CBAClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAClient.h; sourceTree = "<group>"; };
 		D051A89F190A034600CB8E37 /* CBAClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAClient.m; sourceTree = "<group>"; };
 		D07556EB190DAE95007AE0DF /* CBAUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBAUsersViewController.xib; sourceTree = "<group>"; };
+		D07556ED190DC3D6007AE0DF /* CBADatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBADatePickerViewController.h; sourceTree = "<group>"; };
+		D07556EE190DC3D6007AE0DF /* CBADatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBADatePickerViewController.m; sourceTree = "<group>"; };
+		D07556F0190DC3EE007AE0DF /* CBADatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBADatePickerViewController.xib; sourceTree = "<group>"; };
+		D07556F2190DC709007AE0DF /* CBAEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAEventStore.m; sourceTree = "<group>"; };
+		D07556F3190DC709007AE0DF /* CBAEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAEventStore.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +123,15 @@
 		D051A872190A012A00CB8E37 /* CoderBacon */ = {
 			isa = PBXGroup;
 			children = (
+				D07556F3190DC709007AE0DF /* CBAEventStore.h */,
+				D07556F2190DC709007AE0DF /* CBAEventStore.m */,
 				D051A87B190A012A00CB8E37 /* CBAAppDelegate.h */,
 				D051A87C190A012A00CB8E37 /* CBAAppDelegate.m */,
 				D051A89E190A034600CB8E37 /* CBAClient.h */,
 				D051A89F190A034600CB8E37 /* CBAClient.m */,
+				D07556ED190DC3D6007AE0DF /* CBADatePickerViewController.h */,
+				D07556EE190DC3D6007AE0DF /* CBADatePickerViewController.m */,
+				D07556F0190DC3EE007AE0DF /* CBADatePickerViewController.xib */,
 				D051A89B190A01F000CB8E37 /* CBAUsersViewController.h */,
 				D051A89C190A01F000CB8E37 /* CBAUsersViewController.m */,
 				D07556EB190DAE95007AE0DF /* CBAUsersViewController.xib */,
@@ -233,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07556F1190DC3EE007AE0DF /* CBADatePickerViewController.xib in Resources */,
 				D051A877190A012A00CB8E37 /* InfoPlist.strings in Resources */,
 				D07556EC190DAE95007AE0DF /* CBAUsersViewController.xib in Resources */,
 				D051A87F190A012A00CB8E37 /* Images.xcassets in Resources */,
@@ -256,6 +270,8 @@
 			files = (
 				D051A879190A012A00CB8E37 /* main.m in Sources */,
 				D051A89D190A01F000CB8E37 /* CBAUsersViewController.m in Sources */,
+				D07556EF190DC3D6007AE0DF /* CBADatePickerViewController.m in Sources */,
+				D07556F4190DC709007AE0DF /* CBAEventStore.m in Sources */,
 				D051A87D190A012A00CB8E37 /* CBAAppDelegate.m in Sources */,
 				D051A8A0190A034600CB8E37 /* CBAClient.m in Sources */,
 			);
